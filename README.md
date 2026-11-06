@@ -1,4 +1,4 @@
-# Undangan Ngunduh Mantu: Mifthakhul Huda & Tri Wulandari
+# Undangan Pernikahan: Mifthakhul Huda & Tri Wulandari
 
 Undangan statis tanpa build step. Tema adat Jawa, hitam dan gold, minimalis elegan.
 Semua foto yang dipakai adalah sesi foto busana adat Jawa.
@@ -23,7 +23,7 @@ adalah placeholder dan akan tampil apa adanya di halaman.
 
 | Field | Keterangan |
 |---|---|
-| `dateISO` | tanggal dan jam ngunduh mantu, format `2026-12-12T11:00:00+07:00` |
+| `dateISO` | tanggal dan jam acara pernikahan, format `2026-12-12T11:00:00+07:00` |
 | `event.dateLabel` | tanggal lengkap, misalnya `Sabtu, 12 Desember 2026` |
 | `event.dateShort` | tanggal ringkas untuk label foto, misalnya `12 . 12 . 2026` |
 | `event.dayName`, `event.day`, `event.month`, `event.year` | bagian tanggal di kartu acara |
@@ -49,7 +49,7 @@ dengan hati-hati karena teksnya sama.
 ## Bagian yang sudah final
 
 - Akad nikah hanya disebut singkat di bagian Acara, tanpa tanggal.
-- Ngunduh mantu adalah satu-satunya acara yang diundang.
+- Undangan ini berfokus pada satu acara pernikahan.
 - Hitungan mundur dan tombol Simpan Tanggal mengarah ke `dateISO`.
 - Tombol salin rekening dan alamat otomatis nonaktif selama data masih
   berupa placeholder.
@@ -82,7 +82,7 @@ Repo: `seekornorth/undangan-pernikahan`, branch `main`, folder root.
 ```bash
 git init
 git add .
-git commit -m "Undangan ngunduh mantu"
+git commit -m "Undangan pernikahan"
 git branch -M main
 git remote add origin https://github.com/seekornorth/undangan-pernikahan.git
 git push -u origin main

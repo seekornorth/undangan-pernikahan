@@ -1,11 +1,11 @@
 /* =========================================================
-   KONFIGURASI UNDANGAN NGUNDUH MANTU
+   KONFIGURASI UNDANGAN PERNIKAHAN
    Ubah nilai di bawah ini saja. Tidak perlu menyentuh file lain.
    Nilai yang masih memakai tanda [ ] adalah placeholder.
    ========================================================= */
 
 window.WEDDING = {
-  /* Tanggal dan jam acara ngunduh mantu.
+  /* Tanggal dan jam acara pernikahan.
      Format ISO dengan zona waktu +07:00 (WIB).
      Dipakai untuk hitungan mundur dan tombol Simpan Tanggal. */
   dateISO: "2026-12-12T11:00:00+07:00",
@@ -26,8 +26,8 @@ window.WEDDING = {
   },
 
   /* Tombol Simpan Tanggal (Google Calendar) */
-  calendarTitle: "Ngunduh Mantu Mifthakhul Huda & Tri Wulandari",
-  calendarDetails: "Ngunduh mantu Mifthakhul Huda dan Tri Wulandari. Akad nikah telah dilaksanakan.",
+  calendarTitle: "Pernikahan Mifthakhul Huda & Tri Wulandari",
+  calendarDetails: "Pernikahan Mifthakhul Huda dan Tri Wulandari. Akad nikah telah dilaksanakan.",
 
   /* Nomor WhatsApp untuk RSVP: 62 + nomor tanpa 0 di depan.
      GANTI sebelum undangan dibagikan. */

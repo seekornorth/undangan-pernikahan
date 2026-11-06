@@ -1,5 +1,5 @@
 /* =========================================================
-   Mifthakhul & Tri - Undangan Ngunduh Mantu
+   Mifthakhul & Tri - Undangan Pernikahan
    Gaya: adat Jawa, hitam dan gold, minimalis elegan.
    Ornamen tunggal: motif kawung.
    ========================================================= */
@@ -876,6 +876,7 @@ body.is-open .cover { opacity: 0; visibility: hidden; pointer-events: none; }
   transition: border-color 0.25s;
 }
 .link-arrow:hover { border-bottom-color: var(--gold); }
+.link-arrow[hidden] { display: none; }
 
 /* ---------- Galeri ---------- */
 .section--gallery { padding-bottom: calc(var(--sec-y) + 42px); }

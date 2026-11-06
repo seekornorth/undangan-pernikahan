@@ -1,4 +1,4 @@
-/* Undangan ngunduh mantu. Interaksi tanpa library. */
+/* Undangan pernikahan. Interaksi tanpa library. */
 (function () {
   "use strict";
 
@@ -156,7 +156,7 @@
     var ev = CFG.event || {};
     var location = [ev.venue, ev.address].filter(Boolean).join(", ");
     calBtn.href = "https://calendar.google.com/calendar/render?action=TEMPLATE" +
-      "&text=" + encodeURIComponent(CFG.calendarTitle || "Ngunduh Mantu") +
+      "&text=" + encodeURIComponent(CFG.calendarTitle || "Pernikahan") +
       "&dates=" + fmt(start) + "%2F" + fmt(end) +
       "&location=" + encodeURIComponent(location) +
       "&details=" + encodeURIComponent(CFG.calendarDetails || "");
