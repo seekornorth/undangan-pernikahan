@@ -41,18 +41,29 @@
   var nav = $("#nav");
   var main = $("#main");
 
+  document.documentElement.classList.add("is-locked");
   document.body.classList.add("is-locked");
   [nav, main].forEach(function (el) { if (el) el.inert = true; });
 
   function openInvite() {
+    if (document.body.classList.contains("is-open")) return;
+    /* Buka kunci lebih dulu: halaman tidak boleh tertahan walau
+       ada bagian lain yang gagal. */
+    document.documentElement.classList.remove("is-locked");
     document.body.classList.remove("is-locked");
     document.body.classList.add("is-open");
     [nav, main].forEach(function (el) { if (el) el.inert = false; });
-    if (cover) cover.setAttribute("aria-hidden", "true");
+    if (cover) {
+      cover.setAttribute("aria-hidden", "true");
+      cover.inert = true;
+    }
+    /* Animasi baru dimulai setelah cover terbuka, supaya kepala
+       halaman benar-benar terlihat masuk, bukan selesai di balik cover. */
+    setTimeout(startMotion, 120);
     var target = $(".hero__title");
     if (target) {
       target.setAttribute("tabindex", "-1");
-      setTimeout(function () { target.focus({ preventScroll: true }); }, 600);
+      setTimeout(function () { target.focus({ preventScroll: true }); }, 700);
     }
     setTimeout(function () { if (cover) cover.hidden = true; }, 1000);
   }
@@ -110,31 +121,74 @@
 
   /* ---------- Motion on scroll ----------
      Elemen [data-anim] masuk sekali saat terlihat: teks naik,
-     potret tersingkap. Arahnya menuntun mata, bukan menghias. */
+     potret tersingkap. Arahnya menuntun mata, bukan menghias.
+     Pengamat baru dinyalakan setelah cover dibuka; kalau tidak,
+     animasi kepala halaman habis berjalan di balik cover. */
   var animEls = $$("[data-anim]");
+  var motionStarted = false;
+  var motionObserver = null;
+
+  /* Tirai potret. Clip-path dipasang di lapisan anak, bukan di elemen
+     yang diamati: elemen ber-clip-path penuh dianggap tidak terlihat
+     oleh IntersectionObserver, sehingga fotonya tidak pernah muncul. */
+  $$('[data-anim="mask"]').forEach(function (el) {
+    var veil = document.createElement("span");
+    veil.className = "mask-veil";
+    veil.setAttribute("aria-hidden", "true");
+    el.appendChild(veil);
+  });
+
   function showAll() {
     animEls.forEach(function (el) { el.classList.add("is-in"); });
   }
-  if (reduced || !("IntersectionObserver" in window)) {
-    showAll();
-  } else {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-in");
-          io.unobserve(entry.target);
+
+  function revealAboveFold() {
+    animEls.forEach(function (el) {
+      if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add("is-in");
+    });
+  }
+
+  /* Saat tamu melompat jauh (tautan menu atau gulir cepat), sebagian
+     elemen bisa terlewati. Tampilkan apa pun yang sudah berada di atas
+     garis bawah layar supaya tidak ada bagian yang tertinggal kosong. */
+  var sweepQueued = false;
+  function sweepPassed() {
+    if (sweepQueued || !motionStarted) return;
+    sweepQueued = true;
+    requestAnimationFrame(function () {
+      animEls.forEach(function (el) {
+        if (!el.classList.contains("is-in") && el.getBoundingClientRect().top < window.innerHeight) {
+          el.classList.add("is-in");
         }
       });
-    }, { threshold: 0.1, rootMargin: "0px 0px -8% 0px" });
-    animEls.forEach(function (el) { io.observe(el); });
-    /* Jaring aman: kalau ada yang tidak pernah terpicu, tampilkan setelah 3 detik. */
-    setTimeout(function () {
-      animEls.forEach(function (el) {
-        var box = el.getBoundingClientRect();
-        if (box.top < window.innerHeight) el.classList.add("is-in");
-      });
-    }, 3000);
+      sweepQueued = false;
+    });
   }
+  window.addEventListener("scroll", sweepPassed, { passive: true });
+
+  function startMotion() {
+    if (motionStarted) return;
+    motionStarted = true;
+    if (reduced || !("IntersectionObserver" in window)) {
+      showAll();
+      return;
+    }
+    motionObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-in");
+        motionObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.1, rootMargin: "0px 0px -8% 0px" });
+    animEls.forEach(function (el) { motionObserver.observe(el); });
+    /* Jaring aman: apa pun yang sudah di layar tetap tampil. */
+    setTimeout(revealAboveFold, 2600);
+  }
+  /* Kalau halaman dipulihkan dari cache dalam keadaan sudah terbuka,
+     animasi tetap disiapkan. */
+  window.addEventListener("pageshow", function () {
+    if (document.body.classList.contains("is-open")) startMotion();
+  });
 
   /* ---------- Nav state + garis baca ---------- */
   var progress = $(".nav__progress");
