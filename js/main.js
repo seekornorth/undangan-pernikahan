@@ -208,7 +208,7 @@
   }, { passive: true });
 
   /* ---------- Countdown ---------- */
-  var target = new Date(CFG.dateISO || "2026-12-13T11:00:00+07:00").getTime();
+  var target = new Date(CFG.dateISO || "2026-12-13T08:00:00+07:00").getTime();
   var countdown = $("#countdown");
   var units = {};
 
@@ -237,7 +237,7 @@
   /* ---------- Google Calendar ---------- */
   var calBtn = $("#calendarBtn");
   if (calBtn) {
-    var start = new Date(CFG.dateISO || "2026-12-13T11:00:00+07:00");
+    var start = new Date(CFG.dateISO || "2026-12-13T08:00:00+07:00");
     var end = new Date(start.getTime() + 3 * 3600000);
     var fmt = function (d) { return d.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, ""); };
     var ev = CFG.event || {};
@@ -335,22 +335,6 @@
       card.appendChild(btn);
       accountsWrap.appendChild(card);
     });
-  }
-
-  var giftAddressBlock = $("#giftAddressBlock");
-  var giftAddressEl = $("#giftAddress");
-  if (giftAddressBlock && giftAddressEl && gift.address) {
-    giftAddressBlock.hidden = false;
-    giftAddressEl.textContent = gift.address;
-    var addressBtn = $("#copyAddress");
-    if (addressBtn) {
-      if (isPlaceholder(gift.address)) {
-        addressBtn.disabled = true;
-        addressBtn.querySelector("span").textContent = "Belum diisi";
-      } else {
-        bindCopy(addressBtn, gift.address);
-      }
-    }
   }
 
   /* ---------- RSVP ---------- */

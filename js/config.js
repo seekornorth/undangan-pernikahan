@@ -8,7 +8,7 @@ window.WEDDING = {
   /* Tanggal dan jam acara pernikahan.
      Format ISO dengan zona waktu +07:00 (WIB).
      Dipakai untuk hitungan mundur dan tombol Simpan Tanggal. */
-  dateISO: "2026-12-13T11:00:00+07:00",
+  dateISO: "2026-12-13T08:00:00+07:00",
 
   /* Teks tanggal yang tampil di halaman.
      Samakan dengan dateISO di atas. */
@@ -19,10 +19,10 @@ window.WEDDING = {
     day: "13",
     month: "Desember",
     year: "2026",
-    timeLabel: "11.00 - 14.00 WIB",
+    timeLabel: "08.00 - selesai WIB",
     venue: "Rumah Bapak Sukimin",
     address: "Kedung Liwung, RT 03/RW 03, Gosono, Wonosegoro, Boyolali, Jawa Tengah",
-    mapsUrl: "https://www.google.com/maps/search/?api=1&query=Rumah%20Bapak%20Sukimin%2C%20Kedung%20Liwung%2C%20RT%2003%2FRW%2003%2C%20Gosono%2C%20Wonosegoro%2C%20Boyolali%2C%20Jawa%20Tengah"
+    mapsUrl: "https://maps.app.goo.gl/BBaLw81zxjpwjAMn6?g_st=aw"
   },
 
   /* Tombol Simpan Tanggal (Google Calendar) */
@@ -34,9 +34,8 @@ window.WEDDING = {
      menampilkan peringatan, bukan membuka nomor yang salah. */
   rsvpWhatsapp: "",
 
-  /* Hadiah. Ganti nomor rekening dan alamat di bawah.
-     Selama masih ada tanda [ ], tombol salin dinonaktifkan
-     agar tamu tidak menyalin data yang belum jadi. */
+  /* Hadiah. Ganti nomor rekening di bawah. Selama masih ada tanda [ ],
+     tombol salin dinonaktifkan agar tamu tidak menyalin data yang belum jadi. */
   gift: {
     accounts: [
       {
@@ -49,8 +48,7 @@ window.WEDDING = {
         number: "[Nomor rekening Mandiri]",
         holder: "a.n. Mifthakhul Huda"
       }
-    ],
-    address: "[Nama Penerima], [Nomor Telepon], [Alamat lengkap, Kota, Kode Pos]"
+    ]
   },
 
   /* Nama tamu default jika URL tidak memiliki ?to= */

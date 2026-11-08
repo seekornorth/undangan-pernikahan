@@ -23,23 +23,22 @@ memakai tanda `[ ]` adalah placeholder dan akan tampil apa adanya di halaman.
 
 | Field | Keterangan |
 |---|---|
-| `dateISO` | tanggal dan jam acara, format `2026-12-13T11:00:00+07:00` |
+| `dateISO` | tanggal dan jam acara, format `2026-12-13T08:00:00+07:00` |
 | `event.dateLabel` | tanggal lengkap, `Minggu, 13 Desember 2026` |
 | `event.dateShort` | tanggal ringkas untuk label foto, `13 . 12 . 2026` |
 | `event.dayName`, `event.day`, `event.month`, `event.year` | bagian tanggal di kartu acara |
-| `event.timeLabel` | jam acara, `11.00 - 14.00 WIB` |
+| `event.timeLabel` | jam acara, `08.00 - selesai WIB` |
 | `event.venue` | nama lokasi, `Rumah Bapak Sukimin` |
 | `event.address` | alamat lengkap dan kota |
 | `event.mapsUrl` | link Google Maps lokasi acara |
 | `calendarTitle`, `calendarDetails` | isi tombol Simpan Tanggal |
 | `rsvpWhatsapp` | nomor WhatsApp, format `62...` tanpa `0` di depan |
 | `gift.accounts[].bank`, `number`, `holder` | rekening untuk tanda kasih |
-| `gift.address` | alamat pengiriman hadiah |
 | `guestFallback` | nama tamu jika URL dibuka tanpa `?to=` |
 
 Isi `rsvpWhatsapp` dan data rekening sebelum tautan dibagikan. Jika nomor
-WhatsApp kosong, tombol RSVP hanya menampilkan peringatan. Selama rekening
-atau alamat masih berupa placeholder, tombol salin otomatis nonaktif.
+WhatsApp kosong, tombol RSVP hanya menampilkan peringatan. Selama rekening masih
+berupa placeholder, tombol salin otomatis nonaktif.
 
 Nama mempelai dan orang tua ditulis langsung di `index.html`:
 
@@ -50,10 +49,10 @@ Nama mempelai dan orang tua ditulis langsung di `index.html`:
 
 - Acara pernikahan dilaksanakan pada 3 Desember 2026. Undangan ini untuk
   jamuan dan silaturahmi pada 13 Desember 2026, seperti dijelaskan di bagian
-  Acara.
+  Acara. Jamuan dimulai pukul 08.00 WIB dan berlangsung sampai selesai.
 - Hitungan mundur dan tombol Simpan Tanggal mengarah ke `dateISO`.
-- Tombol salin rekening dan alamat otomatis nonaktif selama data masih
-  berupa placeholder.
+- Bagian Hadiah hanya menampilkan nomor rekening. Tombol salin otomatis
+  nonaktif selama data masih berupa placeholder.
 - Tautan Lihat lokasi disembunyikan selama nama tempat masih placeholder.
 - Jumlah tamu disembunyikan jika tamu memilih Tidak hadir.
 - Perjalanan berisi tiga momen: pertama bertemu, lamaran, dan acara
