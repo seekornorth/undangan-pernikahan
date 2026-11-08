@@ -82,6 +82,9 @@ python3 -m http.server 8080
 
 Buka `http://localhost:8080` di browser.
 
+Jika browser masih menampilkan versi lama, lakukan hard reload atau naikkan
+nilai `?v=` pada tautan CSS dan JS di `index.html`.
+
 ## Deploy ke GitHub Pages
 
 Repo: `seekornorth/undangan-pernikahan`, branch `main`, folder root.
