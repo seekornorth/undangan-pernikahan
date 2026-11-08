@@ -55,7 +55,12 @@ dengan hati-hati karena teksnya sama.
   berupa placeholder.
 - Tautan Lihat lokasi disembunyikan selama nama tempat masih placeholder.
 - Jumlah tamu disembunyikan jika tamu memilih Tidak hadir.
-- Galeri berisi 12 foto adat. Ketuk foto untuk membuka tampilan besar.
+- Galeri berisi 4 foto adat. Ketuk foto untuk membuka tampilan besar.
+- Tidak ada bagian Tradisi. Nomor bagian mengikuti urutan:
+  01 Mempelai, 02 Acara, 03 Galeri, 04 Hadiah, 05 RSVP.
+- Animasi hanya untuk menuntun mata: teks naik pelan, foto tersingkap.
+  Semuanya berhenti jika pengguna memilih kurangi gerak
+  (`prefers-reduced-motion`).
 
 ## Nama tamu lewat URL
 
@@ -98,6 +103,12 @@ Semua foto berada di `assets/img/` dalam format WebP. Untuk mengganti foto,
 pakai nama file yang sama agar tidak perlu mengubah markup:
 
 - `cover.webp` dan `hero.webp`: foto pembuka
-- `huda.webp` dan `wulan.webp`: foto mempelai, rasio 4:5
-- `gallery-01.webp` sampai `gallery-12.webp`: galeri
+- `huda-new.webp` dan `wulan-new.webp`: foto mempelai, rasio 4:5 (900x1125)
+- `gallery-03.webp`, `gallery-04.webp`, `gallery-06.webp`, `gallery-08.webp`:
+  empat foto galeri, rasio 4:5 (1000x1250)
+- `gallery-0{3,4,6,8}-640.webp`: versi 640x800 untuk layar kecil lewat `srcset`
 - `closing.webp`: foto penutup
+- `og.jpg`: gambar pratinjau 1200x630 untuk media sosial
+
+Foto asli dari sesi baru disimpan sebagai `IMG-20261106-WA0020.jpg` dan
+`IMG-20261106-WA0021.jpg` di folder yang sama, tidak dimuat oleh halaman.

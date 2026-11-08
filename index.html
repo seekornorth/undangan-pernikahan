@@ -7,15 +7,20 @@
 <meta name="description" content="Undangan pernikahan Mifthakhul Huda dan Tri Wulandari. Kami memohon kehadiran Bapak/Ibu/Saudara/i.">
 <meta name="theme-color" content="#0b0a08">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://seekornorth.github.io/undangan-pernikahan/">
 <meta property="og:title" content="Mifthakhul &amp; Tri | Undangan Pernikahan">
 <meta property="og:description" content="Undangan pernikahan Mifthakhul Huda dan Tri Wulandari.">
-<meta property="og:image" content="assets/img/hero.webp">
+<meta property="og:image" content="https://seekornorth.github.io/undangan-pernikahan/assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230b0a08'/%3E%3Crect x='4' y='4' width='56' height='56' fill='none' stroke='%23c9a05a' stroke-width='1'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='22' fill='%23c9a05a' text-anchor='middle'%3EM%26T%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/img/cover.webp">
 <link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.className += " js";</script>
 </head>
 <body>
 
@@ -56,6 +61,7 @@
     <span class="nav__toggle-label">Menu</span>
     <span class="nav__toggle-lines" aria-hidden="true"><i></i><i></i></span>
   </button>
+  <span class="nav__progress" aria-hidden="true"></span>
 </header>
 
 <div class="menu" id="menu" hidden>
@@ -64,9 +70,8 @@
     <a href="#mempelai"><small>01</small> Mempelai</a>
     <a href="#acara"><small>02</small> Acara</a>
     <a href="#galeri"><small>03</small> Galeri</a>
-    <a href="#tradisi"><small>04</small> Tradisi</a>
-    <a href="#hadiah"><small>05</small> Hadiah</a>
-    <a href="#rsvp"><small>06</small> RSVP</a>
+    <a href="#hadiah"><small>04</small> Hadiah</a>
+    <a href="#rsvp"><small>05</small> RSVP</a>
   </nav>
   <p class="menu__foot">Mifthakhul &amp; Tri<br><span>12 Desember 2026</span></p>
 </div>
@@ -78,14 +83,14 @@
   <span class="hero__kawung" aria-hidden="true"></span>
   <div class="wrap hero__grid">
     <div class="hero__text">
-      <p class="eyebrow reveal">Undangan Pernikahan</p>
-      <h1 class="hero__title reveal">
-        <span>Mifthakhul Huda</span>
-        <em>&amp;</em>
-        <span>Tri Wulandari</span>
+      <p class="eyebrow" data-anim="rise">Undangan Pernikahan</p>
+      <h1 class="hero__title">
+        <span data-anim="rise" style="--i:1">Mifthakhul Huda</span>
+        <em data-anim="rise" style="--i:2">&amp;</em>
+        <span data-anim="rise" style="--i:3">Tri Wulandari</span>
       </h1>
-      <p class="hero__lead reveal">Keluarga Bapak <span class="ph">[Nama Bapak]</span> dan Ibu <span class="ph">[Nama Ibu]</span> memohon kehadiran Bapak/Ibu/Saudara/i pada acara pernikahan putra kami.</p>
-      <dl class="hero__meta reveal">
+      <p class="hero__lead" data-anim="rise" style="--i:4">Keluarga Bapak <span class="ph">[Nama Bapak]</span> dan Ibu <span class="ph">[Nama Ibu]</span> memohon kehadiran Bapak/Ibu/Saudara/i pada acara pernikahan putra kami.</p>
+      <dl class="hero__meta" data-anim="rise" style="--i:5">
         <div>
           <dt>Hari</dt>
           <dd data-field="event.dateLabel">Sabtu, 12 Desember 2026</dd>
@@ -99,9 +104,9 @@
           <dd><span data-field="event.venue">[Nama Gedung atau Rumah]</span><br><span data-field="event.address">[Alamat lengkap, Kota]</span></dd>
         </div>
       </dl>
-      <a class="scroll-cue reveal" href="#mempelai"><span aria-hidden="true"></span>Gulir ke bawah</a>
+      <a class="scroll-cue" href="#mempelai" data-anim="rise" style="--i:6"><span aria-hidden="true"></span>Gulir ke bawah</a>
     </div>
-    <figure class="hero__media reveal">
+    <figure class="hero__media frame" data-anim="mask">
       <div class="hero__img">
         <img src="assets/img/hero.webp" alt="Mifthakhul Huda dan Tri Wulandari dalam busana adat Jawa" width="1200" height="1500" fetchpriority="high">
       </div>
@@ -119,8 +124,8 @@
     <span class="quote__ornament" aria-hidden="true">
       <svg viewBox="0 0 80 40"><g fill="none" stroke="currentColor" stroke-width="1"><ellipse cx="24" cy="20" rx="15" ry="10" transform="rotate(45 24 20)"/><ellipse cx="56" cy="20" rx="15" ry="10" transform="rotate(-45 56 20)"/></g><circle cx="40" cy="20" r="2" fill="currentColor"/></svg>
     </span>
-    <p class="quote__text reveal">Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang.</p>
-    <p class="quote__source reveal">QS. Ar-Rum: 21</p>
+    <p class="quote__text" data-anim="rise">Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang.</p>
+    <p class="quote__source" data-anim="rise" style="--i:1">QS. Ar-Rum: 21</p>
   </div>
 </section>
 
@@ -128,29 +133,33 @@
 <section class="section" id="mempelai">
   <div class="wrap">
     <header class="sec-head">
-      <p class="eyebrow reveal"><span>01</span> Mempelai</p>
-      <h2 class="sec-title reveal">Mempelai</h2>
+      <p class="eyebrow" data-anim="rise"><span>01</span> Mempelai</p>
+      <h2 class="sec-title" data-anim="rise" style="--i:1">Kedua <em>mempelai</em></h2>
     </header>
 
     <div class="couple">
-      <article class="person reveal">
-        <div class="person__photo">
-          <img src="assets/img/huda.webp" alt="Mifthakhul Huda dalam beskap dan blangkon" width="900" height="1125" loading="lazy">
+      <article class="person person--pria">
+        <div class="person__photo frame" data-anim="mask">
+          <img src="assets/img/huda-new.webp" alt="Mifthakhul Huda dalam beskap hitam dan blangkon batik" width="900" height="1125" loading="lazy">
         </div>
-        <h3 class="person__name">Mifthakhul Huda</h3>
-        <p class="person__role">Mempelai pria</p>
-        <p class="person__desc">Putra dari<br>Bapak <span class="ph">[Nama Bapak]</span> &amp; Ibu <span class="ph">[Nama Ibu]</span></p>
+        <div class="person__body">
+          <h3 class="person__name" data-anim="rise">Mifthakhul Huda</h3>
+          <p class="person__role" data-anim="rise">Mempelai pria</p>
+          <p class="person__desc" data-anim="rise" style="--i:1">Putra dari<br>Bapak <span class="ph">[Nama Bapak]</span> &amp; Ibu <span class="ph">[Nama Ibu]</span></p>
+        </div>
       </article>
 
       <div class="couple__amp" aria-hidden="true">&amp;</div>
 
-      <article class="person reveal">
-        <div class="person__photo">
-          <img src="assets/img/wulan.webp" alt="Tri Wulandari dalam kebaya dan sanggul Jawa" width="900" height="1125" loading="lazy">
+      <article class="person person--wanita">
+        <div class="person__photo frame" data-anim="mask">
+          <img src="assets/img/wulan-new.webp" alt="Tri Wulandari dalam kebaya hitam dengan sanggul dan aksesori emas" width="900" height="1125" loading="lazy">
         </div>
-        <h3 class="person__name">Tri Wulandari</h3>
-        <p class="person__role">Mempelai wanita</p>
-        <p class="person__desc">Putri dari<br>Bapak <span class="ph">[Nama Bapak]</span> &amp; Ibu <span class="ph">[Nama Ibu]</span></p>
+        <div class="person__body">
+          <h3 class="person__name" data-anim="rise">Tri Wulandari</h3>
+          <p class="person__role" data-anim="rise">Mempelai wanita</p>
+          <p class="person__desc" data-anim="rise" style="--i:1">Putri dari<br>Bapak <span class="ph">[Nama Bapak]</span> &amp; Ibu <span class="ph">[Nama Ibu]</span></p>
+        </div>
       </article>
     </div>
   </div>
@@ -160,14 +169,14 @@
 <section class="countdown">
   <span class="countdown__kawung" aria-hidden="true"></span>
   <div class="wrap narrow">
-    <p class="eyebrow eyebrow--center reveal">Menuju Hari Bahagia</p>
-    <div class="countdown__grid reveal" id="countdown" aria-label="Hitungan mundur menuju acara">
+    <p class="eyebrow eyebrow--center" data-anim="rise">Menuju Hari Bahagia</p>
+    <div class="countdown__grid" id="countdown" aria-label="Hitungan mundur menuju acara" data-anim="rise" style="--i:1">
       <div><strong data-unit="days">00</strong><span>Hari</span></div>
       <div><strong data-unit="hours">00</strong><span>Jam</span></div>
       <div><strong data-unit="minutes">00</strong><span>Menit</span></div>
       <div><strong data-unit="seconds">00</strong><span>Detik</span></div>
     </div>
-    <a class="btn btn--ghost" id="calendarBtn" href="#" target="_blank" rel="noopener">
+    <a class="btn btn--ghost" id="calendarBtn" href="#" target="_blank" rel="noopener" data-anim="rise" style="--i:2">
       <span>Simpan Tanggal</span>
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
     </a>
@@ -178,14 +187,14 @@
 <section class="section" id="acara">
   <div class="wrap">
     <header class="sec-head">
-      <p class="eyebrow reveal"><span>02</span> Acara</p>
-      <h2 class="sec-title reveal">Acara <em>Pernikahan</em></h2>
+      <p class="eyebrow" data-anim="rise"><span>02</span> Acara</p>
+      <h2 class="sec-title" data-anim="rise" style="--i:1">Acara <em>Pernikahan</em></h2>
     </header>
 
-    <p class="akad-note reveal">Akad nikah telah dilaksanakan. Acara ini menjadi kesempatan kami untuk bersilaturahmi dengan keluarga dan kerabat.</p>
+    <p class="akad-note" data-anim="rise">Akad nikah telah dilaksanakan. Acara ini menjadi kesempatan kami untuk bersilaturahmi dengan keluarga dan kerabat.</p>
 
-    <article class="event reveal">
-      <div class="event__date" aria-hidden="true">
+    <article class="event" data-anim="mask">
+      <div class="event__date">
         <span class="event__day" data-field="event.day">12</span>
         <span class="event__month" data-field="event.month">Desember</span>
         <span class="event__year" data-field="event.year">2026</span>
@@ -205,52 +214,33 @@
 </section>
 
 <!-- GALERI -->
-<section class="section section--gallery" id="galeri">
+<section class="section section--album" id="galeri">
   <div class="wrap">
     <header class="sec-head sec-head--row">
       <div>
-        <p class="eyebrow reveal"><span>03</span> Galeri</p>
-        <h2 class="sec-title reveal">Galeri <em>adat</em></h2>
+        <p class="eyebrow" data-anim="rise"><span>03</span> Galeri</p>
+        <h2 class="sec-title" data-anim="rise" style="--i:1">Galeri <em>adat</em></h2>
       </div>
-      <p class="sec-note reveal">Sesi foto dalam busana adat Jawa. Ketuk foto untuk melihat lebih besar.</p>
+      <p class="sec-note" data-anim="rise" style="--i:2">Empat potret dalam busana adat Jawa. Ketuk foto untuk melihat lebih besar.</p>
     </header>
 
-    <div class="gallery" id="gallery">
-      <figure class="gallery__item reveal"><img src="assets/img/gallery-02.webp" alt="Mempelai duduk bersama dalam busana adat Jawa" width="1000" height="1250" loading="lazy"></figure>
-      <figure class="gallery__item reveal"><img src="assets/img/gallery-03.webp" alt="Mempelai berdiri bersebelahan" width="1000" height="1250" loading="lazy"></figure>
-      <figure class="gallery__item reveal"><img src="assets/img/gallery-04.webp" alt="Mempelai berdiri dengan keris" width="1000" height="1250" loading="lazy"></figure>
-      <figure class="gallery__item reveal"><img src="assets/img/gallery-05.webp" alt="Mempelai duduk di kursi pengantin" width="1000" height="1250" loading="lazy"></figure>
-      <figure class="gallery__item reveal"><img src="assets/img/gallery-06.webp" alt="Mempelai duduk bersama dengan latar lukisan gunung" width="1000" height="1250" loading="lazy"></figure>
-      <figure class="gallery__item reveal"><img src="assets/img/gallery-07.webp" alt="Mempelai duduk berdekatan" width="1000" height="1250" loading="lazy"></figure>
-      <figure class="gallery__item reveal"><img src="assets/img/gallery-08.webp" alt="Mempelai tersenyum dalam busana adat" width="1000" height="1250" loading="lazy"></figure>
-      <figure class="gallery__item reveal"><img src="assets/img/gallery-09.webp" alt="Mempelai bercanda sebelum sesi foto" width="1000" height="1250" loading="lazy"></figure>
-      <figure class="gallery__item reveal"><img src="assets/img/gallery-10.webp" alt="Mempelai pria dengan beskap dan keris" width="1000" height="1250" loading="lazy"></figure>
-      <figure class="gallery__item reveal"><img src="assets/img/gallery-11.webp" alt="Mempelai wanita dalam kebaya hitam" width="1000" height="1250" loading="lazy"></figure>
-      <figure class="gallery__item reveal"><img src="assets/img/gallery-12.webp" alt="Mempelai wanita dengan sanggul dan aksesori emas" width="1000" height="1250" loading="lazy"></figure>
-      <figure class="gallery__item reveal"><img src="assets/img/gallery-01.webp" alt="Detail lengan dan tangan dalam busana adat" width="1000" height="1250" loading="lazy"></figure>
-    </div>
-  </div>
-</section>
-
-<!-- TRADISI -->
-<section class="section section--tradition" id="tradisi">
-  <div class="wrap tradition">
-    <header class="sec-head">
-      <p class="eyebrow reveal"><span>04</span> Tradisi</p>
-      <h2 class="sec-title reveal">Adat <em>Jawa</em></h2>
-      <span class="rule rule--ink reveal" aria-hidden="true"><i></i></span>
-    </header>
-
-    <div class="tradition__body">
-      <p class="tradition__lead reveal">Pernikahan ini kami rayakan dengan adat Jawa. Busana, tata rias, dan prosesi yang tampil di halaman ini adalah bagian dari tradisi yang kami hormati.</p>
-      <p class="reveal">Dalam urutan adat, akad nikah berlangsung di pihak keluarga perempuan. Setelah itu, keluarga pria menyambut menantu perempuan di kediamannya. Tradisi ini dikenal sebagai ngunduh mantu, dan menjadi kesempatan bagi dua keluarga untuk bertemu dan bersilaturahmi.</p>
-      <p class="reveal">Pada acara ini kami mengundang Bapak/Ibu/Saudara/i untuk hadir, menyaksikan prosesi keluarga, dan berbagi doa bagi kedua mempelai.</p>
-
-      <dl class="tradition__facts reveal">
-        <div><dt>Waktu</dt><dd>Setelah akad nikah</dd></div>
-        <div><dt>Tuan rumah</dt><dd>Keluarga mempelai pria</dd></div>
-        <div><dt>Sifat</dt><dd>Jamuan dan silaturahmi keluarga</dd></div>
-      </dl>
+    <div class="album" id="gallery">
+      <figure class="gallery__item album__item" data-anim="mask">
+        <img src="assets/img/gallery-08.webp" srcset="assets/img/gallery-08-640.webp 640w, assets/img/gallery-08.webp 1000w" sizes="(max-width: 720px) 92vw, 42vw" alt="Mempelai duduk berdekatan sambil tersenyum" width="1000" height="1250" loading="lazy">
+        <figcaption><span>01</span> Duduk berdekatan</figcaption>
+      </figure>
+      <figure class="gallery__item album__item" data-anim="mask">
+        <img src="assets/img/gallery-03.webp" srcset="assets/img/gallery-03-640.webp 640w, assets/img/gallery-03.webp 1000w" sizes="(max-width: 720px) 92vw, 30vw" alt="Mempelai wanita bersandar pada mempelai pria" width="1000" height="1250" loading="lazy">
+        <figcaption><span>02</span> Bersandar</figcaption>
+      </figure>
+      <figure class="gallery__item album__item" data-anim="mask">
+        <img src="assets/img/gallery-04.webp" srcset="assets/img/gallery-04-640.webp 640w, assets/img/gallery-04.webp 1000w" sizes="(max-width: 720px) 92vw, 30vw" alt="Mempelai berdiri dengan keris di tangan" width="1000" height="1250" loading="lazy">
+        <figcaption><span>03</span> Berdiri dengan keris</figcaption>
+      </figure>
+      <figure class="gallery__item album__item" data-anim="mask">
+        <img src="assets/img/gallery-06.webp" srcset="assets/img/gallery-06-640.webp 640w, assets/img/gallery-06.webp 1000w" sizes="(max-width: 720px) 92vw, 34vw" alt="Mempelai duduk dengan latar lukisan gunung" width="1000" height="1250" loading="lazy">
+        <figcaption><span>04</span> Latar gunung</figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -259,14 +249,14 @@
 <section class="section section--gift" id="hadiah">
   <div class="wrap narrow">
     <header class="sec-head">
-      <p class="eyebrow reveal"><span>05</span> Hadiah</p>
-      <h2 class="sec-title reveal">Tanda <em>kasih</em></h2>
+      <p class="eyebrow" data-anim="rise"><span>04</span> Hadiah</p>
+      <h2 class="sec-title" data-anim="rise" style="--i:1">Tanda <em>kasih</em></h2>
     </header>
-    <p class="gift__lead reveal">Kehadiran dan doa restu Anda sudah cukup bagi kami. Jika ingin memberi tanda kasih, informasi berikut tersedia.</p>
+    <p class="gift__lead" data-anim="rise">Kehadiran dan doa restu Anda sudah cukup bagi kami. Jika ingin memberi tanda kasih, informasi berikut tersedia.</p>
 
     <div class="gift__cards" id="giftAccounts"></div>
 
-    <div class="gift__address reveal" id="giftAddressBlock" hidden>
+    <div class="gift__address" id="giftAddressBlock" hidden>
       <p class="eyebrow">Kirim hadiah</p>
       <p id="giftAddress"></p>
       <button class="copy-btn copy-btn--plain" type="button" id="copyAddress">
@@ -278,54 +268,56 @@
 
 <!-- RSVP -->
 <section class="section section--rsvp" id="rsvp">
-  <div class="wrap narrow">
-    <header class="sec-head">
-      <p class="eyebrow reveal"><span>06</span> RSVP</p>
-      <h2 class="sec-title reveal">Konfirmasi <em>kehadiran</em></h2>
-    </header>
-    <p class="gift__lead reveal">Merupakan suatu kehormatan apabila Bapak/Ibu/Saudara/i berkenan hadir. Konfirmasi akan dikirim melalui WhatsApp.</p>
+  <div class="wrap">
+    <div class="rsvp__grid">
+      <header class="sec-head rsvp__intro">
+        <p class="eyebrow" data-anim="rise"><span>05</span> RSVP</p>
+        <h2 class="sec-title" data-anim="rise" style="--i:1">Konfirmasi <em>kehadiran</em></h2>
+        <p class="gift__lead" data-anim="rise" style="--i:2">Merupakan suatu kehormatan apabila Bapak/Ibu/Saudara/i berkenan hadir. Konfirmasi akan dikirim melalui WhatsApp.</p>
+      </header>
 
-    <form class="rsvp reveal" id="rsvpForm" novalidate>
-      <div class="field">
-        <label for="rsvpName">Nama</label>
-        <input id="rsvpName" name="nama" type="text" autocomplete="name" placeholder="Nama lengkap" required>
-      </div>
-
-      <fieldset class="field">
-        <legend>Kehadiran</legend>
-        <div class="choice">
-          <label class="choice__item">
-            <input type="radio" name="hadir" value="Hadir" checked>
-            <span>Hadir</span>
-          </label>
-          <label class="choice__item">
-            <input type="radio" name="hadir" value="Tidak hadir">
-            <span>Tidak hadir</span>
-          </label>
+      <form class="rsvp" id="rsvpForm" novalidate data-anim="rise" style="--i:3">
+        <div class="field">
+          <label for="rsvpName">Nama</label>
+          <input id="rsvpName" name="nama" type="text" autocomplete="name" placeholder="Nama lengkap" required>
         </div>
-      </fieldset>
 
-      <div class="field">
-        <label for="rsvpGuests">Jumlah tamu</label>
-        <select id="rsvpGuests" name="jumlah">
-          <option value="1">1 orang</option>
-          <option value="2">2 orang</option>
-          <option value="3">3 orang</option>
-          <option value="4">4 orang</option>
-        </select>
-      </div>
+        <fieldset class="field">
+          <legend>Kehadiran</legend>
+          <div class="choice">
+            <label class="choice__item">
+              <input type="radio" name="hadir" value="Hadir" checked>
+              <span>Hadir</span>
+            </label>
+            <label class="choice__item">
+              <input type="radio" name="hadir" value="Tidak hadir">
+              <span>Tidak hadir</span>
+            </label>
+          </div>
+        </fieldset>
 
-      <div class="field">
-        <label for="rsvpMessage">Ucapan dan doa</label>
-        <textarea id="rsvpMessage" name="pesan" rows="4" placeholder="Tuliskan ucapan untuk kedua mempelai"></textarea>
-      </div>
+        <div class="field">
+          <label for="rsvpGuests">Jumlah tamu</label>
+          <select id="rsvpGuests" name="jumlah">
+            <option value="1">1 orang</option>
+            <option value="2">2 orang</option>
+            <option value="3">3 orang</option>
+            <option value="4">4 orang</option>
+          </select>
+        </div>
 
-      <button class="btn btn--solid" id="rsvpSubmit" type="submit">
-        <span>Kirim via WhatsApp</span>
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
-      </button>
-      <p class="rsvp__note">Pesan akan terbuka di WhatsApp Anda sebelum dikirim.</p>
-    </form>
+        <div class="field">
+          <label for="rsvpMessage">Ucapan dan doa</label>
+          <textarea id="rsvpMessage" name="pesan" rows="4" placeholder="Tuliskan ucapan untuk kedua mempelai"></textarea>
+        </div>
+
+        <button class="btn btn--solid" id="rsvpSubmit" type="submit">
+          <span>Kirim via WhatsApp</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+        </button>
+        <p class="rsvp__note">Pesan akan terbuka di WhatsApp Anda sebelum dikirim.</p>
+      </form>
+    </div>
   </div>
 </section>
 
@@ -334,10 +326,10 @@
   <img class="closing__bg" src="assets/img/closing.webp" alt="" width="2000" height="3000" loading="lazy" aria-hidden="true">
   <div class="closing__veil" aria-hidden="true"></div>
   <div class="closing__inner">
-    <p class="eyebrow eyebrow--light reveal">Terima Kasih</p>
-    <h2 class="closing__title reveal">Atas kehadiran<br>dan doanya</h2>
-    <p class="closing__text reveal">Kami yang berbahagia,<br><strong>Mifthakhul &amp; Tri</strong></p>
-    <a class="btn btn--ghost btn--light reveal" href="#home"><span>Kembali ke atas</span></a>
+    <p class="eyebrow eyebrow--light" data-anim="rise">Terima Kasih</p>
+    <h2 class="closing__title" data-anim="rise" style="--i:1">Atas kehadiran<br>dan doanya</h2>
+    <p class="closing__text" data-anim="rise" style="--i:2">Kami yang berbahagia,<br><strong>Mifthakhul &amp; Tri</strong></p>
+    <a class="btn btn--ghost btn--light" href="#home" data-anim="rise" style="--i:3"><span>Kembali ke atas</span></a>
   </div>
 </section>
 
@@ -354,7 +346,7 @@
   <button class="lightbox__close" id="lbClose" type="button" aria-label="Tutup">&times;</button>
   <button class="lightbox__prev" id="lbPrev" type="button" aria-label="Foto sebelumnya">&#8592;</button>
   <figure class="lightbox__figure">
-    <img id="lbImage" src="" alt="" width="1000" height="1250">
+    <img id="lbImage" alt="" width="1000" height="1250" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
     <figcaption id="lbCaption"></figcaption>
   </figure>
   <button class="lightbox__next" id="lbNext" type="button" aria-label="Foto berikutnya">&#8594;</button>

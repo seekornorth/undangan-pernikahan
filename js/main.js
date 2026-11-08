@@ -92,30 +92,63 @@
       menuToggle.focus();
     }
   });
+  /* Tab tetap di dalam menu selama menu terbuka. */
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Tab" || !menu || !menuToggle || menu.hidden) return;
+    var items = [menuToggle].concat($$("a, button", menu));
+    if (!items.length) return;
+    var first = items[0];
+    var last = items[items.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  });
 
-  /* ---------- Reveal on scroll ---------- */
-  var revealEls = $$(".reveal");
+  /* ---------- Motion on scroll ----------
+     Elemen [data-anim] masuk sekali saat terlihat: teks naik,
+     potret tersingkap. Arahnya menuntun mata, bukan menghias. */
+  var animEls = $$("[data-anim]");
+  function showAll() {
+    animEls.forEach(function (el) { el.classList.add("is-in"); });
+  }
   if (reduced || !("IntersectionObserver" in window)) {
-    revealEls.forEach(function (el) { el.classList.add("is-visible"); });
+    showAll();
   } else {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
+          entry.target.classList.add("is-in");
           io.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.14, rootMargin: "0px 0px -6% 0px" });
-    revealEls.forEach(function (el) { io.observe(el); });
+    }, { threshold: 0.1, rootMargin: "0px 0px -8% 0px" });
+    animEls.forEach(function (el) { io.observe(el); });
+    /* Jaring aman: kalau ada yang tidak pernah terpicu, tampilkan setelah 3 detik. */
+    setTimeout(function () {
+      animEls.forEach(function (el) {
+        var box = el.getBoundingClientRect();
+        if (box.top < window.innerHeight) el.classList.add("is-in");
+      });
+    }, 3000);
   }
 
-  /* ---------- Nav state ---------- */
+  /* ---------- Nav state + garis baca ---------- */
+  var progress = $(".nav__progress");
   var ticking = false;
   window.addEventListener("scroll", function () {
     if (ticking) return;
     ticking = true;
     requestAnimationFrame(function () {
       if (nav) nav.classList.toggle("is-scrolled", window.scrollY > 40);
+      if (progress) {
+        var max = document.documentElement.scrollHeight - window.innerHeight;
+        var ratio = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+        progress.style.setProperty("--p", ratio.toFixed(3));
+      }
       ticking = false;
     });
   }, { passive: true });
@@ -216,7 +249,7 @@
   if (accountsWrap && gift.accounts && gift.accounts.length) {
     gift.accounts.forEach(function (acc) {
       var card = document.createElement("article");
-      card.className = "bank reveal is-visible";
+      card.className = "bank";
 
       var bank = document.createElement("p");
       bank.className = "bank__name";
