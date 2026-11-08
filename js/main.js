@@ -208,7 +208,7 @@
   }, { passive: true });
 
   /* ---------- Countdown ---------- */
-  var target = new Date(CFG.dateISO || "2026-12-12T11:00:00+07:00").getTime();
+  var target = new Date(CFG.dateISO || "2026-12-13T11:00:00+07:00").getTime();
   var countdown = $("#countdown");
   var units = {};
 
@@ -237,7 +237,7 @@
   /* ---------- Google Calendar ---------- */
   var calBtn = $("#calendarBtn");
   if (calBtn) {
-    var start = new Date(CFG.dateISO || "2026-12-12T11:00:00+07:00");
+    var start = new Date(CFG.dateISO || "2026-12-13T11:00:00+07:00");
     var end = new Date(start.getTime() + 3 * 3600000);
     var fmt = function (d) { return d.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, ""); };
     var ev = CFG.event || {};
@@ -413,9 +413,11 @@
     if (!galleryItems.length) return;
     current = (index + galleryItems.length) % galleryItems.length;
     var img = galleryItems[current];
+    var figure = img.closest(".gallery__item");
+    var caption = figure ? figure.getAttribute("data-caption") : "";
     lbImage.src = img.currentSrc || img.src;
     lbImage.alt = img.alt || "";
-    lbCaption.textContent = (current + 1) + " / " + galleryItems.length;
+    lbCaption.textContent = (caption ? caption + "  ·  " : "") + (current + 1) + " / " + galleryItems.length;
   }
   function openLightbox(index) {
     if (!lightbox) return;
@@ -438,9 +440,10 @@
   galleryItems.forEach(function (img, i) {
     var figure = img.closest(".gallery__item");
     if (!figure) return;
+    var caption = figure.getAttribute("data-caption");
     figure.setAttribute("tabindex", "0");
     figure.setAttribute("role", "button");
-    figure.setAttribute("aria-label", "Perbesar foto " + (i + 1));
+    figure.setAttribute("aria-label", caption ? "Perbesar foto: " + caption : "Perbesar foto " + (i + 1));
     figure.addEventListener("click", function () { openLightbox(i); });
     figure.addEventListener("keydown", function (e) {
       if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openLightbox(i); }

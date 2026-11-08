@@ -1,7 +1,7 @@
 # Undangan Pernikahan: Mifthakhul Huda & Tri Wulandari
 
 Undangan statis tanpa build step. Tema adat Jawa, hitam dan gold, minimalis elegan.
-Semua foto yang dipakai adalah sesi foto busana adat Jawa.
+Selain potret busana adat, halaman memuat tiga foto momen perjalanan pasangan.
 
 ## Struktur
 
@@ -9,26 +9,26 @@ Semua foto yang dipakai adalah sesi foto busana adat Jawa.
 index.html            markup dan seluruh teks undangan
 css/style.css         tampilan, termasuk versi layar pendek
 js/config.js          data acara, WhatsApp, dan rekening hadiah
-js/main.js            cover, menu, hitungan mundur, RSVP, galeri
+js/main.js            cover, menu, hitungan mundur, RSVP, perjalanan
 assets/img/           foto WebP yang sudah dioptimalkan
 ```
 
 Tidak ada dependency build. Hanya font Google (Cormorant Garamond dan Jost)
 yang dimuat lewat CDN.
 
-## Yang perlu diisi
+## Data acara
 
-Semua data acara ada di `js/config.js`. Nilai yang masih memakai tanda `[ ]`
-adalah placeholder dan akan tampil apa adanya di halaman.
+Tanggal, tempat, dan tautan dipusatkan di `js/config.js`. Nilai yang masih
+memakai tanda `[ ]` adalah placeholder dan akan tampil apa adanya di halaman.
 
 | Field | Keterangan |
 |---|---|
-| `dateISO` | tanggal dan jam acara pernikahan, format `2026-12-12T11:00:00+07:00` |
-| `event.dateLabel` | tanggal lengkap, misalnya `Sabtu, 12 Desember 2026` |
-| `event.dateShort` | tanggal ringkas untuk label foto, misalnya `12 . 12 . 2026` |
+| `dateISO` | tanggal dan jam acara, format `2026-12-13T11:00:00+07:00` |
+| `event.dateLabel` | tanggal lengkap, `Minggu, 13 Desember 2026` |
+| `event.dateShort` | tanggal ringkas untuk label foto, `13 . 12 . 2026` |
 | `event.dayName`, `event.day`, `event.month`, `event.year` | bagian tanggal di kartu acara |
-| `event.timeLabel` | jam acara, misalnya `11.00 - 14.00 WIB` |
-| `event.venue` | nama gedung atau rumah |
+| `event.timeLabel` | jam acara, `11.00 - 14.00 WIB` |
+| `event.venue` | nama lokasi, `Rumah Bapak Sukimin` |
 | `event.address` | alamat lengkap dan kota |
 | `event.mapsUrl` | link Google Maps lokasi acara |
 | `calendarTitle`, `calendarDetails` | isi tombol Simpan Tanggal |
@@ -37,27 +37,29 @@ adalah placeholder dan akan tampil apa adanya di halaman.
 | `gift.address` | alamat pengiriman hadiah |
 | `guestFallback` | nama tamu jika URL dibuka tanpa `?to=` |
 
-Nama orang tua masih ditulis langsung di `index.html`:
+Isi `rsvpWhatsapp` dan data rekening sebelum tautan dibagikan. Jika nomor
+WhatsApp kosong, tombol RSVP hanya menampilkan peringatan. Selama rekening
+atau alamat masih berupa placeholder, tombol salin otomatis nonaktif.
 
-- `[Nama Bapak]` dan `[Nama Ibu]` pada bagian pembuka, untuk orang tua mempelai pria
-- `[Nama Bapak]` dan `[Nama Ibu]` pada kartu Mifthakhul Huda
-- `[Nama Bapak]` dan `[Nama Ibu]` pada kartu Tri Wulandari
+Nama mempelai dan orang tua ditulis langsung di `index.html`:
 
-Ganti setiap pasangan dengan nama yang benar. Gunakan fitur cari dan ganti
-dengan hati-hati karena teksnya sama.
+- Mifthakhul Huda, putra Bapak Purwanto dan Ibu Sri Handayani
+- Tri Wulandari, putri Bapak Wagiman dan Ibu Sumarni
 
 ## Bagian yang sudah final
 
-- Akad nikah hanya disebut singkat di bagian Acara, tanpa tanggal.
-- Undangan ini berfokus pada satu acara pernikahan.
+- Acara pernikahan dilaksanakan pada 3 Desember 2026. Undangan ini untuk
+  jamuan dan silaturahmi pada 13 Desember 2026, seperti dijelaskan di bagian
+  Acara.
 - Hitungan mundur dan tombol Simpan Tanggal mengarah ke `dateISO`.
 - Tombol salin rekening dan alamat otomatis nonaktif selama data masih
   berupa placeholder.
 - Tautan Lihat lokasi disembunyikan selama nama tempat masih placeholder.
 - Jumlah tamu disembunyikan jika tamu memilih Tidak hadir.
-- Galeri berisi 4 foto adat. Ketuk foto untuk membuka tampilan besar.
-- Tidak ada bagian Tradisi. Nomor bagian mengikuti urutan:
-  01 Mempelai, 02 Acara, 03 Galeri, 04 Hadiah, 05 RSVP.
+- Perjalanan berisi tiga momen: pertama bertemu, lamaran, dan acara
+  pernikahan. Ketuk foto untuk membuka tampilan besar.
+- Nomor bagian mengikuti urutan: 01 Mempelai, 02 Acara, 03 Perjalanan,
+  04 Hadiah, 05 RSVP.
 - Animasi hanya untuk menuntun mata: teks naik pelan, foto tersingkap.
   Semuanya berhenti jika pengguna memilih kurangi gerak
   (`prefers-reduced-motion`).
@@ -99,16 +101,18 @@ Branch: `main`, Folder: `/ (root)`. Situs akan tersedia di
 
 ## Foto
 
-Semua foto berada di `assets/img/` dalam format WebP. Untuk mengganti foto,
-pakai nama file yang sama agar tidak perlu mengubah markup:
+Semua foto yang dimuat berada di `assets/img/` dalam format WebP.
 
 - `cover.webp` dan `hero.webp`: foto pembuka
 - `huda-new.webp` dan `wulan-new.webp`: foto mempelai, rasio 4:5 (900x1125)
-- `gallery-03.webp`, `gallery-04.webp`, `gallery-06.webp`, `gallery-08.webp`:
-  empat foto galeri, rasio 4:5 (1000x1250)
-- `gallery-0{3,4,6,8}-640.webp`: versi 640x800 untuk layar kecil lewat `srcset`
+- `pertamaketemu.webp`: momen pertama bertemu, rasio 1:1 (720x720)
+- `lamaran.webp`: momen lamaran, rasio 4:3 (1080x784)
+- `lamaran-640.webp`: versi 640x465 untuk layar kecil lewat `srcset`
+- `nikahan.webp`: momen acara pernikahan, rasio 4:5 (640x800)
+- `gallery-08.webp`: versi 1000x1250 untuk layar besar lewat `srcset`
 - `closing.webp`: foto penutup
 - `og.jpg`: gambar pratinjau 1200x630 untuk media sosial
 
-Foto asli dari sesi baru disimpan sebagai `IMG-20261106-WA0020.jpg` dan
-`IMG-20261106-WA0021.jpg` di folder yang sama, tidak dimuat oleh halaman.
+Foto sumber `pertamaketemu.jpg` dan `lamaran.jpg` disimpan di folder yang sama,
+tidak dimuat oleh halaman. Foto `gallery-03`, `gallery-04`, `gallery-06`, dan
+varian `-640`-nya tidak lagi dipakai oleh tata letak Perjalanan.

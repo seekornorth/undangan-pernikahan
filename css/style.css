@@ -943,64 +943,128 @@ body.is-open .cover {
 .link-arrow:hover { border-bottom-color: var(--gold); }
 .link-arrow[hidden] { display: none; }
 
-/* ---------- Galeri ----------
-   Empat potret disusun seperti halaman album: dua bidang besar
-   yang saling mengimbangi, bukan grid kartu yang seragam. */
-.section--album { padding-bottom: calc(var(--sec-y) + 2rem); }
-.album {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: clamp(1rem, 2.4vw, 2rem);
-  align-items: start;
-}
-.album__item { margin: 0; }
-.album__item:nth-child(1) { grid-column: 1 / span 7; }
-.album__item:nth-child(2) { grid-column: 8 / span 5; margin-top: clamp(3rem, 7vw, 6rem); }
-.album__item:nth-child(3) { grid-column: 2 / span 4; margin-top: clamp(2rem, 5vw, 4rem); }
-.album__item:nth-child(4) { grid-column: 6 / span 7; }
-
-.gallery__item {
+/* ---------- Perjalanan ----------
+   Tiga momen disusun sebagai garis waktu. Foto dan cerita bergantian
+   sisi supaya mata bergerak turun, bukan membaca grid kartu. */
+.section--journey { padding-bottom: calc(var(--sec-y) + 2rem); }
+.journey {
   position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(201, 160, 90, 0.14);
+  display: grid;
+  gap: clamp(3.5rem, 8vw, 7rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.journey::before {
+  content: "";
+  position: absolute;
+  top: 0.4rem;
+  bottom: 0.4rem;
+  left: 50%;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, var(--gold-soft) 7%, var(--gold-soft) 93%, transparent);
+  transform: translateX(-0.5px);
+}
+.journey__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(3rem, 7vw, 6rem);
+}
+.journey__item::before {
+  content: "";
+  position: absolute;
+  top: 1.1rem;
+  left: 50%;
+  width: 7px;
+  height: 7px;
+  border: 1px solid var(--gold);
+  background: var(--ink);
+  transform: translate(-50%, -50%) rotate(45deg);
+  z-index: 1;
+}
+.journey__body {
+  grid-column: 2;
+  grid-row: 1;
+  max-width: 380px;
+}
+.journey__item:nth-child(even) .journey__body {
+  grid-column: 1;
+  justify-self: end;
+  text-align: right;
+}
+.journey__media {
+  position: relative;
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: end;
+  width: 100%;
+  max-width: 460px;
+  margin: 0;
+  border: 1px solid var(--gold-faint);
   background: var(--ink-2);
   cursor: zoom-in;
 }
-.gallery__item img {
+.journey__item:nth-child(even) .journey__media {
+  grid-column: 2;
+  justify-self: start;
+}
+.journey__item:nth-child(even) .journey__media.frame::before {
+  inset: 16px 16px -16px -16px;
+}
+.journey__clip {
+  position: relative;
+  overflow: hidden;
+}
+.journey__media img {
   width: 100%;
-  aspect-ratio: 4 / 5;
   object-fit: cover;
   transition: transform 0.9s var(--ease-out), filter 0.4s var(--ease);
 }
-.gallery__item::after {
+.journey__item:nth-child(1) .journey__media img { aspect-ratio: 1 / 1; }
+.journey__item:nth-child(2) .journey__media img { aspect-ratio: 4 / 3; }
+.journey__item:nth-child(3) .journey__media img { aspect-ratio: 4 / 5; }
+.journey__media::after {
   content: "";
   position: absolute;
-  inset: 8px;
+  inset: 9px;
+  z-index: 4;
   border: 1px solid rgba(242, 234, 216, 0.16);
   opacity: 0;
   transition: opacity 0.4s var(--ease);
   pointer-events: none;
 }
-.gallery__item:hover img { transform: scale(1.03); filter: brightness(1.05); }
-.gallery__item:hover::after { opacity: 1; }
-.gallery__item:focus-visible { outline-offset: 3px; }
+.journey__media:hover img,
+.journey__media:focus-visible img { filter: brightness(1.05); }
+.js .journey__media.is-in:hover img,
+.js .journey__media.is-in:focus-visible img { transform: scale(1.03); }
+.journey__media:hover::after,
+.journey__media:focus-visible::after { opacity: 1; }
+.journey__media:focus-visible { outline-offset: 4px; }
 
-.album__item figcaption {
-  display: flex;
-  align-items: baseline;
-  gap: 0.7rem;
-  padding-top: 0.85rem;
-  font-size: 0.68rem;
-  letter-spacing: 0.14em;
+.journey__date {
+  margin-bottom: 0.75rem;
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  font-weight: 400;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--cream-faint);
-}
-.album__item figcaption span {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 0.92rem;
-  letter-spacing: 0.04em;
   color: var(--gold);
+}
+.journey__title {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3vw, 2.35rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--cream);
+}
+.journey__text {
+  margin-top: 0.85rem;
+  font-size: 0.9rem;
+  line-height: 1.85;
+  color: var(--cream-dim);
+  text-wrap: pretty;
 }
 
 /* ---------- Hadiah ---------- */
@@ -1392,12 +1456,42 @@ body.is-open .cover {
   .rsvp__grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .rsvp__intro { position: static; }
   .rsvp__intro .gift__lead { margin-bottom: 0; }
-  .album__item:nth-child(1) { grid-column: 1 / span 7; }
-  .album__item:nth-child(2) { grid-column: 8 / span 5; }
-  .album__item:nth-child(3) { grid-column: 1 / span 5; }
-  .album__item:nth-child(4) { grid-column: 6 / span 7; }
   .event { grid-template-columns: 200px 1fr; }
   .closing { justify-content: flex-end; }
+}
+
+@media (max-width: 860px) {
+  .journey { gap: 3.75rem; }
+  .journey::before { left: 5px; transform: none; }
+  .journey__item {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+    padding-left: 2rem;
+  }
+  .journey__item::before {
+    top: 0.7rem;
+    left: 5px;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  .journey__body,
+  .journey__item:nth-child(even) .journey__body {
+    grid-column: 1;
+    grid-row: 1;
+    max-width: 100%;
+    text-align: left;
+    justify-self: start;
+  }
+  .journey__media,
+  .journey__item:nth-child(even) .journey__media {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: start;
+    max-width: 100%;
+  }
+  .journey__media.frame::before,
+  .journey__item:nth-child(even) .journey__media.frame::before {
+    inset: 12px 12px -12px -12px;
+  }
 }
 
 @media (max-width: 720px) {
@@ -1436,12 +1530,7 @@ body.is-open .cover {
   .event__year { margin-top: 0; }
   .event__list > div { grid-template-columns: 4.6rem 1fr; gap: 0.8rem; }
 
-  .album { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
-  .album__item:nth-child(1) { grid-column: 1 / -1; margin-top: 0; }
-  .album__item:nth-child(2) { grid-column: 1 / span 1; margin-top: 1.5rem; }
-  .album__item:nth-child(3) { grid-column: 2 / span 1; margin-top: 3rem; }
-  .album__item:nth-child(4) { grid-column: 1 / -1; margin-top: 0; }
-  .album__item figcaption { font-size: 0.66rem; letter-spacing: 0.1em; padding-top: 0.6rem; }
+  .journey__date { font-size: 0.62rem; letter-spacing: 0.2em; }
 
   .gift__cards { grid-template-columns: 1fr; }
   .rsvp .btn { justify-self: stretch; }
@@ -1475,8 +1564,10 @@ body.is-open .cover {
   .hero__media { max-width: 100%; }
   .countdown__grid strong { font-size: 2.3rem; }
   .event__day { font-size: 2.7rem; }
-  .album { gap: 0.5rem; }
-  .album__item figcaption { font-size: 0.66rem; }
+  .journey { gap: 3rem; }
+  .journey__item { padding-left: 1.6rem; }
+  .journey::before,
+  .journey__item::before { left: 4px; }
 }
 
 @media (max-width: 720px) and (max-height: 740px) {
