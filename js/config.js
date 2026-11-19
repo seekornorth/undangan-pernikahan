@@ -32,7 +32,7 @@ window.WEDDING = {
   /* Nomor WhatsApp untuk RSVP: 62 + nomor tanpa 0 di depan.
      Biarkan kosong sampai nomor asli tersedia. Tombol akan
      menampilkan peringatan, bukan membuka nomor yang salah. */
-  rsvpWhatsapp: "",
+  rsvpWhatsapp: "6282121148783",
 
   /* Hadiah. Ganti nomor rekening di bawah. Selama masih ada tanda [ ],
      tombol salin dinonaktifkan agar tamu tidak menyalin data yang belum jadi. */

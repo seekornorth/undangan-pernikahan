@@ -32,13 +32,14 @@ memakai tanda `[ ]` adalah placeholder dan akan tampil apa adanya di halaman.
 | `event.address` | alamat lengkap dan kota |
 | `event.mapsUrl` | link Google Maps lokasi acara |
 | `calendarTitle`, `calendarDetails` | isi tombol Simpan Tanggal |
-| `rsvpWhatsapp` | nomor WhatsApp, format `62...` tanpa `0` di depan |
+| `rsvpWhatsapp` | nomor WhatsApp konfirmasi, `6282121148783` |
 | `gift.accounts[].bank`, `number`, `holder` | rekening untuk tanda kasih (SeaBank, a.n. Mifthakhul Huda) |
 | `guestFallback` | nama tamu jika URL dibuka tanpa `?to=` |
 
-Isi `rsvpWhatsapp` dan data rekening sebelum tautan dibagikan. Jika nomor
-WhatsApp kosong, tombol RSVP hanya menampilkan peringatan. Selama rekening masih
-berupa placeholder, tombol salin otomatis nonaktif.
+Nomor WhatsApp konfirmasi sudah terisi, jadi tombol RSVP langsung membuka
+WhatsApp dengan pesan yang sudah diisi. Jika nomornya dikosongkan lagi, tombol
+hanya menampilkan peringatan. Selama rekening masih berupa placeholder, tombol
+salin otomatis nonaktif.
 
 Nama mempelai dan orang tua ditulis langsung di `index.html`:
 
