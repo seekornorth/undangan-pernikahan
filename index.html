@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/img/cover.webp">
-<link rel="stylesheet" href="css/style.css?v=20261108-3">
+<link rel="stylesheet" href="css/style.css?v=20261119-1">
 <script>document.documentElement.className += " js";</script>
 </head>
 <body>
@@ -70,8 +70,9 @@
     <a href="#mempelai"><small>01</small> Mempelai</a>
     <a href="#acara"><small>02</small> Acara</a>
     <a href="#perjalanan"><small>03</small> Perjalanan</a>
-    <a href="#hadiah"><small>04</small> Hadiah</a>
-    <a href="#rsvp"><small>05</small> RSVP</a>
+    <a href="#galeri"><small>04</small> Galeri</a>
+    <a href="#hadiah"><small>05</small> Hadiah</a>
+    <a href="#rsvp"><small>06</small> RSVP</a>
   </nav>
   <p class="menu__foot">Mifthakhul &amp; Tri<br><span>13 Desember 2026</span></p>
 </div>
@@ -224,7 +225,7 @@
       <p class="sec-note" data-anim="rise" style="--i:2">Tiga momen yang membawa kami ke hari ini. Ketuk foto untuk melihat lebih besar.</p>
     </header>
 
-    <ol class="journey" id="gallery">
+    <ol class="journey">
       <li class="journey__item">
         <div class="journey__body" data-anim="rise">
           <p class="journey__date">22 Januari 2024</p>
@@ -267,11 +268,51 @@
   </div>
 </section>
 
+<!-- GALERI -->
+<section class="section section--album" id="galeri">
+  <div class="wrap">
+    <header class="sec-head sec-head--row">
+      <div>
+        <p class="eyebrow" data-anim="rise"><span>04</span> Galeri</p>
+        <h2 class="sec-title" data-anim="rise" style="--i:1">Galeri <em>adat</em></h2>
+      </div>
+      <p class="sec-note" data-anim="rise" style="--i:2">Empat potret dalam busana adat Jawa. Ketuk foto untuk melihat lebih besar.</p>
+    </header>
+
+    <div class="album" id="album">
+      <figure class="gallery__item album__item" data-anim="mask" data-caption="Duduk berdekatan">
+        <div class="album__media">
+          <img src="assets/img/gallery-08.webp" srcset="assets/img/gallery-08-640.webp 640w, assets/img/gallery-08.webp 1000w" sizes="(max-width: 720px) 92vw, 42vw" alt="Mempelai duduk berdekatan sambil tersenyum" width="1000" height="1250" loading="lazy">
+        </div>
+        <figcaption><span>01</span> Duduk berdekatan</figcaption>
+      </figure>
+      <figure class="gallery__item album__item" data-anim="mask" data-caption="Bersandar">
+        <div class="album__media">
+          <img src="assets/img/gallery-03.webp" srcset="assets/img/gallery-03-640.webp 640w, assets/img/gallery-03.webp 1000w" sizes="(max-width: 720px) 92vw, 30vw" alt="Mempelai wanita bersandar pada mempelai pria" width="1000" height="1250" loading="lazy">
+        </div>
+        <figcaption><span>02</span> Bersandar</figcaption>
+      </figure>
+      <figure class="gallery__item album__item" data-anim="mask" data-caption="Berdiri dengan keris">
+        <div class="album__media">
+          <img src="assets/img/gallery-04.webp" srcset="assets/img/gallery-04-640.webp 640w, assets/img/gallery-04.webp 1000w" sizes="(max-width: 720px) 92vw, 30vw" alt="Mempelai berdiri dengan keris di tangan" width="1000" height="1250" loading="lazy">
+        </div>
+        <figcaption><span>03</span> Berdiri dengan keris</figcaption>
+      </figure>
+      <figure class="gallery__item album__item" data-anim="mask" data-caption="Latar gunung">
+        <div class="album__media">
+          <img src="assets/img/gallery-06.webp" srcset="assets/img/gallery-06-640.webp 640w, assets/img/gallery-06.webp 1000w" sizes="(max-width: 720px) 92vw, 34vw" alt="Mempelai duduk dengan latar lukisan gunung" width="1000" height="1250" loading="lazy">
+        </div>
+        <figcaption><span>04</span> Latar gunung</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
 <!-- HADIAH -->
 <section class="section section--gift" id="hadiah">
   <div class="wrap narrow">
     <header class="sec-head">
-      <p class="eyebrow" data-anim="rise"><span>04</span> Hadiah</p>
+      <p class="eyebrow" data-anim="rise"><span>05</span> Hadiah</p>
       <h2 class="sec-title" data-anim="rise" style="--i:1">Tanda <em>kasih</em></h2>
     </header>
     <p class="gift__lead" data-anim="rise">Kehadiran dan doa restu Anda sudah cukup bagi kami. Jika ingin memberi tanda kasih, informasi berikut tersedia.</p>
@@ -285,7 +326,7 @@
   <div class="wrap">
     <div class="rsvp__grid">
       <header class="sec-head rsvp__intro">
-        <p class="eyebrow" data-anim="rise"><span>05</span> RSVP</p>
+        <p class="eyebrow" data-anim="rise"><span>06</span> RSVP</p>
         <h2 class="sec-title" data-anim="rise" style="--i:1">Konfirmasi <em>kehadiran</em></h2>
         <p class="gift__lead" data-anim="rise" style="--i:2">Merupakan suatu kehormatan apabila Bapak/Ibu/Saudara/i berkenan hadir. Konfirmasi akan dikirim melalui WhatsApp.</p>
       </header>
@@ -368,7 +409,7 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="js/config.js?v=20261108-3"></script>
-<script src="js/main.js?v=20261108-3"></script>
+<script src="js/config.js?v=20261119-1"></script>
+<script src="js/main.js?v=20261119-1"></script>
 </body>
 </html>

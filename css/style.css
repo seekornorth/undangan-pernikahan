@@ -1067,6 +1067,72 @@ body.is-open .cover {
   text-wrap: pretty;
 }
 
+/* ---------- Galeri ----------
+   Empat potret disusun seperti halaman album: dua bidang besar
+   yang saling mengimbangi, bukan grid kartu yang seragam. */
+.section--album { padding-bottom: calc(var(--sec-y) + 2rem); }
+.album {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(1rem, 2.4vw, 2rem);
+  align-items: start;
+}
+.album__item {
+  position: relative;
+  margin: 0;
+  cursor: zoom-in;
+}
+.album__item:nth-child(1) { grid-column: 1 / span 7; }
+.album__item:nth-child(2) { grid-column: 8 / span 5; margin-top: clamp(3rem, 7vw, 6rem); }
+.album__item:nth-child(3) { grid-column: 2 / span 4; margin-top: clamp(2rem, 5vw, 4rem); }
+.album__item:nth-child(4) { grid-column: 6 / span 7; }
+.album__media {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(201, 160, 90, 0.14);
+  background: var(--ink-2);
+}
+.album__media img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  transition: transform 0.9s var(--ease-out), filter 0.4s var(--ease);
+}
+.album__media::after {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(242, 234, 216, 0.16);
+  opacity: 0;
+  transition: opacity 0.4s var(--ease);
+  pointer-events: none;
+  z-index: 4;
+}
+.album__item:hover img,
+.album__item:focus-visible img { filter: brightness(1.05); }
+.js .album__item.is-in:hover img,
+.js .album__item.is-in:focus-visible img { transform: scale(1.03); }
+.album__item:hover .album__media::after,
+.album__item:focus-visible .album__media::after { opacity: 1; }
+.album__item:focus-visible { outline-offset: 3px; }
+.album__item figcaption {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  padding-top: 0.85rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cream-faint);
+}
+.album__item figcaption span {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.92rem;
+  letter-spacing: 0.04em;
+  color: var(--gold);
+}
+
 /* ---------- Hadiah ---------- */
 .section--gift { padding-top: calc(var(--sec-y) * 0.85); }
 .gift__lead {
@@ -1078,7 +1144,7 @@ body.is-open .cover {
 }
 .gift__cards {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1rem;
 }
 .bank {
@@ -1443,6 +1509,10 @@ body.is-open .cover {
   .rsvp__grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .rsvp__intro { position: static; }
   .rsvp__intro .gift__lead { margin-bottom: 0; }
+  .album__item:nth-child(1) { grid-column: 1 / span 7; }
+  .album__item:nth-child(2) { grid-column: 8 / span 5; }
+  .album__item:nth-child(3) { grid-column: 1 / span 5; }
+  .album__item:nth-child(4) { grid-column: 6 / span 7; }
   .event { grid-template-columns: 200px 1fr; }
   .closing { justify-content: flex-end; }
 }
@@ -1519,7 +1589,13 @@ body.is-open .cover {
 
   .journey__date { font-size: 0.62rem; letter-spacing: 0.2em; }
 
-  .gift__cards { grid-template-columns: 1fr; }
+  .album { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+  .album__item:nth-child(1) { grid-column: 1 / -1; margin-top: 0; }
+  .album__item:nth-child(2) { grid-column: 1 / span 1; margin-top: 1.5rem; }
+  .album__item:nth-child(3) { grid-column: 2 / span 1; margin-top: 3rem; }
+  .album__item:nth-child(4) { grid-column: 1 / -1; margin-top: 0; }
+  .album__item figcaption { font-size: 0.66rem; letter-spacing: 0.1em; padding-top: 0.6rem; }
+
   .rsvp .btn { justify-self: stretch; }
 
   .closing {
@@ -1551,6 +1627,7 @@ body.is-open .cover {
   .hero__media { max-width: 100%; }
   .countdown__grid strong { font-size: 2.3rem; }
   .event__day { font-size: 2.7rem; }
+  .album { gap: 0.5rem; }
   .journey { gap: 3rem; }
   .journey__item { padding-left: 1.6rem; }
   .journey::before,

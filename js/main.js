@@ -386,7 +386,7 @@
   }
 
   /* ---------- Lightbox ---------- */
-  var galleryItems = $$("#gallery .gallery__item img");
+  var galleryItems = $$(".gallery__item img");
   var lightbox = $("#lightbox");
   var lbImage = $("#lbImage");
   var lbCaption = $("#lbCaption");

@@ -33,7 +33,7 @@ memakai tanda `[ ]` adalah placeholder dan akan tampil apa adanya di halaman.
 | `event.mapsUrl` | link Google Maps lokasi acara |
 | `calendarTitle`, `calendarDetails` | isi tombol Simpan Tanggal |
 | `rsvpWhatsapp` | nomor WhatsApp, format `62...` tanpa `0` di depan |
-| `gift.accounts[].bank`, `number`, `holder` | rekening untuk tanda kasih |
+| `gift.accounts[].bank`, `number`, `holder` | rekening untuk tanda kasih (SeaBank, a.n. Mifthakhul Huda) |
 | `guestFallback` | nama tamu jika URL dibuka tanpa `?to=` |
 
 Isi `rsvpWhatsapp` dan data rekening sebelum tautan dibagikan. Jika nomor
@@ -51,14 +51,15 @@ Nama mempelai dan orang tua ditulis langsung di `index.html`:
   jamuan dan silaturahmi pada 13 Desember 2026, seperti dijelaskan di bagian
   Acara. Jamuan dimulai pukul 08.00 WIB dan berlangsung sampai selesai.
 - Hitungan mundur dan tombol Simpan Tanggal mengarah ke `dateISO`.
-- Bagian Hadiah hanya menampilkan nomor rekening. Tombol salin otomatis
-  nonaktif selama data masih berupa placeholder.
+- Bagian Hadiah hanya menampilkan satu nomor rekening SeaBank. Tombol
+  salin otomatis nonaktif selama data masih berupa placeholder.
 - Tautan Lihat lokasi disembunyikan selama nama tempat masih placeholder.
 - Jumlah tamu disembunyikan jika tamu memilih Tidak hadir.
 - Perjalanan berisi tiga momen: pertama bertemu, lamaran, dan acara
-  pernikahan. Ketuk foto untuk membuka tampilan besar.
+  pernikahan. Di bawahnya ada galeri empat potret adat. Ketuk foto untuk
+  membuka tampilan besar.
 - Nomor bagian mengikuti urutan: 01 Mempelai, 02 Acara, 03 Perjalanan,
-  04 Hadiah, 05 RSVP.
+  04 Galeri, 05 Hadiah, 06 RSVP.
 - Animasi hanya untuk menuntun mata: teks naik pelan, foto tersingkap.
   Semuanya berhenti jika pengguna memilih kurangi gerak
   (`prefers-reduced-motion`).

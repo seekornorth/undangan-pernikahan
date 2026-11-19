@@ -39,13 +39,8 @@ window.WEDDING = {
   gift: {
     accounts: [
       {
-        bank: "Bank BCA",
-        number: "[Nomor rekening BCA]",
-        holder: "a.n. Tri Wulandari"
-      },
-      {
-        bank: "Bank Mandiri",
-        number: "[Nomor rekening Mandiri]",
+        bank: "SeaBank",
+        number: "901521876580",
         holder: "a.n. Mifthakhul Huda"
       }
     ]
